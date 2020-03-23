@@ -3,11 +3,14 @@ import random
 cpu_deck = ['r', 's', 'p']
 player_score = 0
 cpu_score = 0
+entry = ['r', 'rock', 's', 'scissor', 'p', 'paper']
 rounds = input(print("how many wins to finish the game? "))
 while 1:
 
     # cpu = random.randint(1,3)
-    player = input(print('type "r" for Rock, "s" for scissor , p for "paper"')).lower()
+    player = input(print('type "r" or Rock, "s" or scissor , p or "paper"')).lower()
+    if player not in entry:
+        continue
     random.shuffle(cpu_deck)
     if player == 'r':
         if cpu_deck[0] == 's':
